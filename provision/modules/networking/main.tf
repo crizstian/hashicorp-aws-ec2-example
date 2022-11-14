@@ -35,6 +35,6 @@ module "sg-private" {
   description              = "Security group for user-service with custom ports open within VPC, and PostgreSQL publicly open"
   vpc_id                   = module.vpc[each.key].vpc_id
   ingress_cidr_blocks      = [each.value.vpc_cidr]
-  ingress_rules            = each.value.sg_pub.standard
-  ingress_with_cidr_blocks = each.value.sg_pub.custom
+  ingress_rules            = each.value.sg_priv.standard
+  ingress_with_cidr_blocks = each.value.sg_priv.custom
 }
